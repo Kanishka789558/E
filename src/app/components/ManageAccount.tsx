@@ -1,7 +1,7 @@
 "use client";
-/* eslint-disable react-hooks/exhaustive-deps */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/no-unescaped-entities */
+
 // "use client";
 
 // import styles from "./ManageAccount.module.css";
