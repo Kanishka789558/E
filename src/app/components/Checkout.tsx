@@ -668,7 +668,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/app/libr/supabaseClient";
-import styles from "./checkout.module.css";
+import styles from "./Checkout.module.css";
 
 interface Product {
   id: number;
