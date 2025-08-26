@@ -1,0 +1,126 @@
+.checkoutSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 80px;
+}
+
+.billing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form input {
+  height: 48px;
+  padding: 8px 12px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.checkbox {
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.orderSummary {
+  width: 527px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.productRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.productInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.totals hr {
+  opacity: 0.4;
+  border: 0.5px solid #000;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.radioRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.paymentLogos {
+  display: flex;
+  gap: 8px;
+}
+
+.coupon {
+  display: flex;
+  gap: 16px;
+}
+
+.coupon input {
+  flex: 1;
+  height: 56px;
+  padding: 0 16px;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.couponBtn {
+  width: 211px;
+  height: 56px;
+  background: #db4444;
+  border: none;
+  border-radius: 4px;
+  color: #fafafa;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.placeOrderBtn {
+  width: 190px;
+  height: 56px;
+  background: #db4444;
+  border: none;
+  border-radius: 4px;
+  color: #fafafa;
+  font-size: 16px;
+  cursor: pointer;
+}

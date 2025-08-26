@@ -1,0 +1,215 @@
+/* Container Section */
+.mathSection {
+  position: relative; /* relative instead of absolute for the container */
+  width: 1170px;
+  margin: 0 auto; /* center horizontally */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Header Row */
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tagRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tagBox {
+  width: 20px;
+  height: 40px;
+  background: #DB4444;
+  border-radius: 4px;
+  margin-top: 150px;
+}
+
+.tag {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #DB4444;
+  margin-top: 150px;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  color: #000;
+  letter-spacing: 0.04em;
+}
+
+.viewBtn {
+  background: #DB4444;
+  color: #FAFAFA;
+  padding: 16px 48px;
+  border-radius: 4px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Products Row */
+.productsRow {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Individual Product Card */
+
+
+/* Product Info */
+
+.productTitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.priceRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.newPrice {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #DB4444;
+}
+
+.oldPrice {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars span {
+  width: 20px;
+  height: 20px;
+  background: #FFAD33;
+  border-radius: 2px;
+}
+
+.reviews {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+  opacity: 0.5;
+}
+
+/* ========== Action Buttons (Frame 568) ========== */
+.actionBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  position: absolute;
+  width: 34px;
+  height: 76px;
+  right: 12px;
+  top: 12px;
+}
+
+.actionBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.actionBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Card */
+.card {
+  position: relative;
+  width: 270px;   /* match figma */
+  height: 350px;  /* give enough room for image + info */
+  background: transparent; /* remove full grey here */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Image Box */
+.imageBox {
+  position: relative; /* ❌ remove absolute */
+  width: 270px;
+  height: 250px;
+  background: #F5F5F5; /* grey only for image area */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Product Image */
+.productImage {
+  object-fit: contain;
+}
+
+/* Info Box */
+.infoBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* instead of center */
+  gap: 8px;
+}

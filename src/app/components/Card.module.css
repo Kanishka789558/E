@@ -1,0 +1,166 @@
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 1170px;
+  margin: 40px auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05);
+  padding: 20px 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+/* Cart Item */
+.cartItem {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 20px 40px;
+  gap: 24px;
+}
+
+.removeBtn {
+  border: none;
+  background: #db4444;
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.productImg {
+  border-radius: 4px;
+}
+
+.productName {
+  flex: 1;
+  font-size: 16px;
+}
+
+.productPrice,
+.productSubtotal {
+  font-size: 16px;
+  color: #000;
+}
+
+.quantityBox input {
+  width: 60px;
+  height: 36px;
+  border: 1.5px solid rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Action Buttons */
+.actionBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.secondaryBtn {
+  padding: 16px 48px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: transparent;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Bottom Section */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.couponWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.couponWrapper input {
+  width: 300px;
+  height: 56px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.applyBtn {
+  padding: 16px 48px;
+  background: #db4444;
+  color: #fafafa;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cartTotal {
+  width: 470px;
+  border: 1.5px solid #000;
+  border-radius: 4px;
+  padding: 24px;
+  position: relative;
+}
+
+.cartTotal h3 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: 16px;
+  background: #db4444;
+  color: #fafafa;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+
+.pageWrapper {
+  width: 100%;
+  min-height: 100vh; /* pura viewport height */
+  background: #f9f9f9;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;  /* pura screen width */
+  max-width: 1200px; /* responsive control */
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}

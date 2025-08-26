@@ -1,0 +1,31 @@
+.smallBox {
+  border: 2px solid transparent;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border 0.2s ease;
+}
+.smallBox:hover {
+  border: 2px solid #ddd;
+}
+.activeThumb {
+  border: 2px solid #000;
+}
+
+.sizeBox {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.sizeBox:hover {
+  background: #f0f0f0;
+}
+.activeSize {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}

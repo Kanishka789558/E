@@ -1,0 +1,168 @@
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.formRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.inputGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.inputGroup input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.inputGroup input:focus {
+  border-color: #000;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.cancelBtn {
+  padding: 12px 24px;
+  border: 1px solid #999;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancelBtn:hover {
+  background: #f2f2f2;
+}
+
+.saveBtn {
+  padding: 12px 24px;
+  background: #db4444;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.saveBtn:hover {
+  background: #b93636;
+}
+
+
+
+
+.pageWrapper {
+  position: relative;
+  padding: 40px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  position: absolute;
+  top: 20px;
+  left: 135px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #000;
+  opacity: 0.5;
+}
+
+.breadcrumb .separator {
+  opacity: 0.7;
+}
+
+/* Welcome text (top-right) */
+.welcome {
+  position: absolute;
+  top: 20px;
+  right: 135px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+.username {
+  color: #DB4444;
+  font-weight: 500;
+}
+
+/* Layout (Sidebar + Main) */
+.layout {
+  display: flex;
+  margin-top: 80px; /* leave space for breadcrumb/welcome */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  margin-right: 40px;
+}
+
+.sidebar h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px 0 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.sidebar li {
+  font-size: 16px;
+  color: #000;
+  opacity: 0.5;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.sidebar li.active {
+  color: #DB4444;
+  opacity: 1;
+}

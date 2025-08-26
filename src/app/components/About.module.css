@@ -1,0 +1,260 @@
+.aboutSection {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 80px;
+  background: #ffffff;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.breadcrumb span {
+  margin: 0 5px;
+  color: #000;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.textContent {
+  flex: 1;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.paragraph {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutImage {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ------------------ Stats Section ------------------ */
+.statsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0;
+}
+
+.statsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.statsCard {
+  width: 270px;
+  height: 230px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.highlight {
+  background: #db4444;
+  color: #ffffff;
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #000000;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 30px;
+  letter-spacing: 0.04em;
+  color: #000000;
+}
+
+.valueHighlight {
+  color: #ffffff;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: #000000;
+}
+
+.labelHighlight {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .statsWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ------------------ Team Section ------------------ */
+.teamSection {
+  width: 1170px;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.teamCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 370px;
+  height: 564px;
+}
+
+.imageBox {
+  width: 370px;
+  height: 430px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.profileImg {
+  height: 400px;
+  width: auto;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  color: #000;
+}
+
+.socials a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 88px;
+  margin: 100px auto;
+}
+
+.serviceBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  width: 250px;
+}
+
+.iconCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 10px rgba(47, 46, 48, 0.3);
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+}
+
+.text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+}
