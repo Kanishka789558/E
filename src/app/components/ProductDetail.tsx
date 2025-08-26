@@ -585,9 +585,130 @@
 
 
 
+// "use client";
+
+// import { useEffect, useState } from "react"; // <-- use() hata diya
+// import Image from "next/image";
+// import { supabase } from "@/app/libr/supabaseClient";
+// import { getImageSrc } from "@/app/utils/getImageSrc";
+// import styles from "./productdetail.module.css";
+
+// interface Product {
+//   id: number;
+//   title: string;
+//   price: number;
+//   description: string;
+//   images: string[];
+//   colours: string[];
+//   sizes: string[];
+//   stock: number;
+//   reviews_count: number;
+// }
+
+// export default function ProductDetailPage({ params }: { params: { id: string } }) {
+//   const { id } = params; // <-- Ab simple object hai, Promise nahi
+//   const productId = Number(id);
+
+//   const [product, setProduct] = useState<Product | null>(null);
+//   const [mainImage, setMainImage] = useState<string>("");
+//   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
+//   useEffect(() => {
+//     if (!productId) return;
+
+//     const fetchProduct = async () => {
+//       const { data, error } = await supabase
+//         .from("productdetail")
+//         .select(
+//           "id, title, price, description, images, colours, sizes, stock, reviews_count, products:products!fk_product (id, name, price, image)"
+//         )
+//         .eq("id", productId)
+//         .single();
+
+//       if (error) {
+//         console.error("Supabase Error:", error.message);
+//       } else {
+//         setProduct(data);
+//         if (data.images?.length > 0) {
+//           setMainImage(getImageSrc(data.images[0]));
+//         }
+//       }
+//     };
+
+//     fetchProduct();
+//   }, [productId]);
+
+//   if (!product) return <div>Loading...</div>;
+
+//   return (
+//     <div className={styles.container}>
+//       <div className={styles.leftColumn}>
+//         {product.images?.map((img, idx) => (
+//           <div
+//             key={idx}
+//             className={`${styles.smallBox} ${mainImage === getImageSrc(img) ? styles.activeThumb : ""}`}
+//             onClick={() => setMainImage(getImageSrc(img))}
+//           >
+//             <Image src={getImageSrc(img)} alt={product.title} width={80} height={80} />
+//           </div>
+//         ))}
+//       </div>
+
+//       <div className={styles.mainImage}>
+//         <Image src={mainImage} alt={product.title} width={400} height={400} />
+//       </div>
+
+//       <div className={styles.rightColumn}>
+//         <h2 className={styles.productTitle}>{product.title}</h2>
+//         <div className={styles.ratingRow}>
+//           <span className={styles.reviews}>({product.reviews_count} Reviews)</span>
+//           <div className={styles.divider}></div>
+//           <span className={styles.stock}>{product.stock > 0 ? "In Stock" : "Out of Stock"}</span>
+//         </div>
+//         <div className={styles.price}>${product.price}</div>
+//         <p className={styles.description}>{product.description}</p>
+
+//         <div className={styles.underline}></div>
+
+//         <div className={styles.colorRow}>
+//           <span>Colours:</span>
+//           {product.colours?.map((color, idx) => (
+//             <div key={idx} style={{ backgroundColor: color }} className={styles.colorCircle}></div>
+//           ))}
+//         </div>
+
+//         <div className={styles.sizeRow}>
+//           <span className={styles.sizeLabel}>Size:</span>
+//           <div className={styles.sizeOptions}>
+//             {product.sizes?.map((size, idx) => (
+//               <div
+//                 key={idx}
+//                 className={`${styles.sizeBox} ${selectedSize === size ? styles.activeSize : ""}`}
+//                 onClick={() => setSelectedSize(size)}
+//               >
+//                 {size}
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+
+//         <div className={styles.actionRow}>
+//           <div className={styles.qtyBox}>
+//             <button>-</button>
+//             <span>1</span>
+//             <button>+</button>
+//           </div>
+//           <button className={styles.buyNow}>Buy Now</button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+
 "use client";
 
-import { useEffect, useState } from "react"; // <-- use() hata diya
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { supabase } from "@/app/libr/supabaseClient";
 import { getImageSrc } from "@/app/utils/getImageSrc";
@@ -605,14 +726,18 @@ interface Product {
   reviews_count: number;
 }
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const { id } = params; // <-- Ab simple object hai, Promise nahi
-  const productId = Number(id);
-
+export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const [productId, setProductId] = useState<number | null>(null);
   const [product, setProduct] = useState<Product | null>(null);
   const [mainImage, setMainImage] = useState<string>("");
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
+  // ✅ Promise unwrap here safely
+  useEffect(() => {
+    params.then(({ id }) => setProductId(Number(id)));
+  }, [params]);
+
+  // ✅ Fetch product when productId is ready
   useEffect(() => {
     if (!productId) return;
 
