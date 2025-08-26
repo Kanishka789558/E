@@ -1029,8 +1029,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { supabase } from "@/app/libr/supabaseClient";
-import styles from "./today.module.css";
+import styles from "./Today.module.css";
 import { useRouter } from "next/navigation"; // App Router hook
+
 
 type DBProduct = {
   id: number;

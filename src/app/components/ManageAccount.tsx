@@ -1,7 +1,7 @@
 "use client";
-/* eslint-disable react-hooks/exhaustive-deps */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/no-unescaped-entities */
+
 // "use client";
 
 // import styles from "./ManageAccount.module.css";
@@ -183,7 +183,8 @@
 import { useEffect, useState } from "react";
 // import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { supabase } from "@/app/libr/supabaseClient";
-import styles from "./manageaccount.module.css";
+
+import styles from "./ManageAccount.module.css";
 
 export default function ManageAccount() {
   // const supabase = createClientComponentClient();
