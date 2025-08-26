@@ -183,7 +183,8 @@
 import { useEffect, useState } from "react";
 // import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { supabase } from "@/app/libr/supabaseClient";
-import styles from "./manageaccount.module.css";
+
+import styles from "./ManageAccount.module.css";
 
 export default function ManageAccount() {
   // const supabase = createClientComponentClient();
