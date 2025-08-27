@@ -1,3 +1,14 @@
+"use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-async-client-component */
+
+ 
+
+
+// import { useEffect, useState } from "react";
+// import { Product } from "../lib/data";
+// import { supabase } from "../libr/supabaseClient";
+// import { getImageSrc } from "../utils/getImageSrc";
 
 // "use client";
 
@@ -85,259 +96,14 @@
 // }
 
 
-// "use client";
-
-// import { useEffect, useState } from "react";
-// import Image from "next/image";
-// import { createClient } from "@supabase/supabase-js";
-// import styles from "./productdetail.module.css";
-
-// const supabase = createClient(
-//   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-//   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-// );
-
-// interface Product {
-//   id: number;
-//   title: string;
-//   price: number;
-//   description: string;
-//   images: string[];
-//   colours: string[];
-//   sizes: string[];
-//   stock: number;
-//   reviews_count: number;
-// }
-
-// export default function ProductDetail({ productId }: { productId: number }) {
-//   const [product, setProduct] = useState<Product | null>(null);
-
-//   useEffect(() => {
-//     const fetchProduct = async () => {
-//       const { data, error } = await supabase
-//         .from("products")
-//         .select("id, title, price, description, images, colours, sizes, stock, reviews_count")
-//         .eq("id", productId)
-//         .single();
-//       if (!error) setProduct(data);
-//     };
-//     fetchProduct();
-//   }, [productId]);
-
-//   if (!product) return <div>Loading...</div>;
-
-//   return (
-//     <div className={styles.container}>
-//       {/* Left Side - Small Images */}
-//       <div className={styles.leftColumn}>
-//         {product.images.map((img, idx) => (
-//           <div key={idx} className={styles.smallBox}>
-//             <Image src={`/${img}`} alt={product.title} width={80} height={80} />
-//           </div>
-//         ))}
-//       </div>
-
-//       {/* Center - Main Image */}
-//       <div className={styles.mainImage}>
-//         <Image
-//           src={`/${product.images[0]}`}
-//           alt={product.title}
-//           width={400}
-//           height={400}
-//         />
-//       </div>
-
-//       {/* Right Side - Product Info */}
-//       <div className={styles.rightColumn}>
-//         <h2 className={styles.productTitle}>{product.title}</h2>
-
-//         {/* Rating */}
-//         <div className={styles.ratingRow}>
-//           <span className={styles.reviews}>({product.reviews_count} Reviews)</span>
-//           <div className={styles.divider}></div>
-//           <span className={styles.stock}>{product.stock > 0 ? "In Stock" : "Out of Stock"}</span>
-//         </div>
-
-//         {/* Price */}
-//         <div className={styles.price}>${product.price}</div>
-
-//         {/* Description */}
-//         <p className={styles.description}>{product.description}</p>
-
-//         <div className={styles.underline}></div>
-
-//         {/* Colors */}
-//         <div className={styles.colorRow}>
-//           <span>Colours:</span>
-//           {product.colours.map((color, idx) => (
-//             <div key={idx} style={{ backgroundColor: color }} className={styles.colorCircle}></div>
-//           ))}
-//         </div>
-
-//         {/* Sizes */}
-//         <div className={styles.sizeRow}>
-//           <span className={styles.sizeLabel}>Size:</span>
-//           <div className={styles.sizeOptions}>
-//             {product.sizes.map((size, idx) => (
-//               <div key={idx} className={styles.sizeBox}>{size}</div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Quantity + Buttons */}
-//         <div className={styles.actionRow}>
-//           <div className={styles.qtyBox}>
-//             <button>-</button>
-//             <span>1</span>
-//             <button>+</button>
-//           </div>
-
-//           <button className={styles.buyNow}>Buy Now</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// "use client";
-
-// import { useEffect, useState } from "react";
-// import Image from "next/image";
-// import { createClient } from "@supabase/supabase-js";
-// import styles from "./productdetail.module.css";
-
-// const supabase = createClient(
-//   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-//   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-// );
-
-// interface Product {
-//   id: number;
-//   title: string;
-//   price: number;
-//   description: string;
-//   images: string[];
-//   colours: string[];
-//   sizes: string[];
-//   stock: number;
-//   reviews_count: number;
-// }
-
-// export default function ProductDetail({ productId }: { productId: number }) {
-//   const [product, setProduct] = useState<Product | null>(null);
-
-//   useEffect(() => {
-//     const fetchProduct = async () => {
-//       const { data, error } = await supabase
-//         .from("productdetail") // CHANGED TABLE NAME HERE
-//         .select(
-//           "id, title, price, description, images, colours, sizes, stock, reviews_count"
-//         )
-//         .eq("id", productId)
-//         .single();
-
-//       if (!error) setProduct(data);
-//     };
-//     fetchProduct();
-//   }, [productId]);
-
-//   if (!product) return <div>Loading...</div>;
-
-//   return (
-//     <div className={styles.container}>
-//       {/* Left Side - Small Images */}
-//       <div className={styles.leftColumn}>
-//         {product.images.map((img, idx) => (
-//           <div key={idx} className={styles.smallBox}>
-//             <Image src={`/${img}`} alt={product.title} width={80} height={80} />
-//           </div>
-//         ))}
-//       </div>
-
-//       {/* Center - Main Image */}
-//       <div className={styles.mainImage}>
-//         <Image
-//           src={`/${product.images[0]}`}
-//           alt={product.title}
-//           width={400}
-//           height={400}
-//         />
-//       </div>
-
-//       {/* Right Side - Product Info */}
-//       <div className={styles.rightColumn}>
-//         <h2 className={styles.productTitle}>{product.title}</h2>
-
-//         {/* Rating */}
-//         <div className={styles.ratingRow}>
-//           <span className={styles.reviews}>({product.reviews_count} Reviews)</span>
-//           <div className={styles.divider}></div>
-//           <span className={styles.stock}>
-//             {product.stock > 0 ? "In Stock" : "Out of Stock"}
-//           </span>
-//         </div>
-
-//         {/* Price */}
-//         <div className={styles.price}>${product.price}</div>
-
-//         {/* Description */}
-//         <p className={styles.description}>{product.description}</p>
-
-//         <div className={styles.underline}></div>
-
-//         {/* Colors */}
-//         <div className={styles.colorRow}>
-//           <span>Colours:</span>
-//           {product.colours.map((color, idx) => (
-//             <div
-//               key={idx}
-//               style={{ backgroundColor: color }}
-//               className={styles.colorCircle}
-//             ></div>
-//           ))}
-//         </div>
-
-//         {/* Sizes */}
-//         <div className={styles.sizeRow}>
-//           <span className={styles.sizeLabel}>Size:</span>
-//           <div className={styles.sizeOptions}>
-//             {product.sizes.map((size, idx) => (
-//               <div key={idx} className={styles.sizeBox}>
-//                 {size}
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Quantity + Buttons */}
-//         <div className={styles.actionRow}>
-//           <div className={styles.qtyBox}>
-//             <button>-</button>
-//             <span>1</span>
-//             <button>+</button>
-//           </div>
-
-//           <button className={styles.buyNow}>Buy Now</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 
 
-
-// 
-
-
-// "use client";
 
 // import { useEffect, useState } from "react";
 // import Image from "next/image";
 // import { supabase } from "@/app/libr/supabaseClient";
 // import { getImageSrc } from "@/app/utils/getImageSrc";
-// import styles from "./productdetail.module.css";
 
 // interface Product {
 //   id: number;
@@ -351,11 +117,20 @@
 //   reviews_count: number;
 // }
 
-// export default function ProductDetailPage({ params }: { params: { id: string } }) {
-//   const productId = Number(params.id);
+// interface ProductDetailPageProps {
+//   params: { id: string }; // Updated to remove Promise
+// }
+
+// export default function ProductDetailPage({ params }: ProductDetailPageProps) {
+//   const [productId, setProductId] = useState<number | null>(null);
 //   const [product, setProduct] = useState<Product | null>(null);
-//   const [mainImage, setMainImage] = useState<string>(""); // main image state
-//   const [selectedSize, setSelectedSize] = useState<string | null>(null); // size selection
+//   const [mainImage, setMainImage] = useState<string>("");
+//   const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
+//   useEffect(() => {
+//     // Directly use params without async
+//     setProductId(Number(params.id));
+//   }, [params]);
 
 //   useEffect(() => {
 //     if (!productId) return;
@@ -363,16 +138,16 @@
 //     const fetchProduct = async () => {
 //       const { data, error } = await supabase
 //         .from("productdetail")
-//         .select("id, title, price, description, images, colours, sizes, stock, reviews_count")
+//         .select(
+//           "id, title, price, description, images, colours, sizes, stock, reviews_count"
+//         )
 //         .eq("id", productId)
 //         .single();
 
-//       if (error) {
-//         console.error("Supabase Error:", error.message);
-//       } else {
+//       if (!error && data) {
 //         setProduct(data);
 //         if (data.images?.length > 0) {
-//           setMainImage(getImageSrc(data.images[0])); // Default main image
+//           setMainImage(getImageSrc(data.images[0]));
 //         }
 //       }
 //     };
@@ -380,59 +155,90 @@
 //     fetchProduct();
 //   }, [productId]);
 
-//   if (!product) return <div>Loading...</div>;
+//   if (!product) return <div className="text-center mt-10">Loading...</div>;
 
 //   return (
-//     <div className={styles.container}>
-//       {/* Left side thumbnails */}
-//       <div className={styles.leftColumn}>
+//     <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+//       {/* Left Thumbnails */}
+//       <div className="flex md:flex-col gap-3">
 //         {product.images?.map((img, idx) => (
 //           <div
 //             key={idx}
-//             className={`${styles.smallBox} ${mainImage === getImageSrc(img) ? styles.activeThumb : ""}`}
-//             onClick={() => setMainImage(getImageSrc(img))} // click to change main image
+//             className={`border rounded-xl p-1 cursor-pointer transition ${
+//               mainImage === getImageSrc(img)
+//                 ? "border-blue-500"
+//                 : "border-gray-200"
+//             }`}
+//             onClick={() => setMainImage(getImageSrc(img))}
 //           >
-//             <Image src={getImageSrc(img)} alt={product.title} width={80} height={80} />
+//             <Image
+//               src={getImageSrc(img)}
+//               alt={product.title}
+//               width={80}
+//               height={80}
+//               className="rounded-lg"
+//             />
 //           </div>
 //         ))}
 //       </div>
 
 //       {/* Main Image */}
-//       <div className={styles.mainImage}>
-//         <Image src={mainImage} alt={product.title} width={400} height={400} />
+//       <div className="flex justify-center items-center border rounded-xl p-4">
+//         <Image
+//           src={mainImage}
+//           alt={product.title}
+//           width={400}
+//           height={400}
+//           className="rounded-lg"
+//         />
 //       </div>
 
-//       {/* Right Column Details */}
-//       <div className={styles.rightColumn}>
-//         <h2 className={styles.productTitle}>{product.title}</h2>
-//         <div className={styles.ratingRow}>
-//           <span className={styles.reviews}>({product.reviews_count} Reviews)</span>
-//           <div className={styles.divider}></div>
-//           <span className={styles.stock}>
+//       {/* Product Info */}
+//       <div className="flex flex-col gap-4">
+//         <h2 className="text-2xl font-semibold">{product.title}</h2>
+
+//         <div className="flex items-center gap-3 text-sm">
+//           <span className="text-gray-500">({product.reviews_count} Reviews)</span>
+//           <div className="w-px h-4 bg-gray-300"></div>
+//           <span
+//             className={`${
+//               product.stock > 0 ? "text-green-600" : "text-red-500"
+//             }`}
+//           >
 //             {product.stock > 0 ? "In Stock" : "Out of Stock"}
 //           </span>
 //         </div>
-//         <div className={styles.price}>${product.price}</div>
-//         <p className={styles.description}>{product.description}</p>
 
-//         <div className={styles.underline}></div>
+//         <div className="text-2xl font-bold">${product.price}</div>
 
-//         {/* Colours */}
-//         <div className={styles.colorRow}>
-//           <span>Colours:</span>
-//           {product.colours?.map((color, idx) => (
-//             <div key={idx} style={{ backgroundColor: color }} className={styles.colorCircle}></div>
-//           ))}
+//         <p className="text-gray-600">{product.description}</p>
+
+//         {/* Colors */}
+//         <div className="flex items-center gap-2">
+//           <span className="font-medium">Colours:</span>
+//           <div className="flex gap-2">
+//             {product.colours?.map((color, idx) => (
+//               <div
+//                 key={idx}
+//                 className="w-6 h-6 rounded-full border border-gray-300"
+//                 style={{ backgroundColor: color }}
+//               ></div>
+//             ))}
+//           </div>
 //         </div>
 
-//         {/* Sizes with click */}
-//         <div className={styles.sizeRow}>
-//           <span className={styles.sizeLabel}>Size:</span>
-//           <div className={styles.sizeOptions}>
+//         {/* Sizes */}
+//         <div>
+//           <span className="font-medium">Size:</span>
+//           <div className="flex gap-2 mt-2">
 //             {product.sizes?.map((size, idx) => (
 //               <div
 //                 key={idx}
-//                 className={`${styles.sizeBox} ${selectedSize === size ? styles.activeSize : ""}`}
+//                 className={`px-3 py-1 border rounded-lg cursor-pointer ${
+//                   selectedSize === size
+//                     ? "bg-blue-500 text-white"
+//                     : "border-gray-300"
+//                 }`}
 //                 onClick={() => setSelectedSize(size)}
 //               >
 //                 {size}
@@ -442,13 +248,15 @@
 //         </div>
 
 //         {/* Quantity & Buy Button */}
-//         <div className={styles.actionRow}>
-//           <div className={styles.qtyBox}>
-//             <button>-</button>
-//             <span>1</span>
-//             <button>+</button>
+//         <div className="flex gap-4 items-center mt-4">
+//           <div className="flex items-center border rounded-lg">
+//             <button className="px-3 py-1">-</button>
+//             <span className="px-3">1</span>
+//             <button className="px-3 py-1">+</button>
 //           </div>
-//           <button className={styles.buyNow}>Buy Now</button>
+//           <button className="bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition">
+//             Buy Now
+//           </button>
 //         </div>
 //       </div>
 //     </div>
@@ -459,14 +267,10 @@
 
 
 
-
-// "use client";
-
-// import { useEffect, useState, use } from "react"; // <-- use() yahan import kiya
+// import { useEffect, useState } from "react";
 // import Image from "next/image";
 // import { supabase } from "@/app/libr/supabaseClient";
 // import { getImageSrc } from "@/app/utils/getImageSrc";
-// import styles from "./productdetail.module.css";
 
 // interface Product {
 //   id: number;
@@ -480,139 +284,26 @@
 //   reviews_count: number;
 // }
 
-// export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
-//   const { id } = use(params); // <-- Promise unwrap with use()
-//   const productId = Number(id);
+// type ProductDetailPageProps = {
+//   params: {
+//     id: string;
+//   };
+// };
 
+// export default function ProductDetailPage({ params }: ProductDetailPageProps) {
+//   const [productId, setProductId] = useState<number | null>(null);
 //   const [product, setProduct] = useState<Product | null>(null);
 //   const [mainImage, setMainImage] = useState<string>("");
 //   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
+//   // set productId from params
 //   useEffect(() => {
-//     if (!productId) return;
+//     if (params?.id) {
+//       setProductId(Number(params.id));
+//     }
+//   }, [params]);
 
-//     const fetchProduct = async () => {
-//       const { data, error } = await supabase
-//         .from("productdetail")
-//         .select("id, title, price, description, images, colours, sizes, stock, reviews_count,products:products!fk_product (id, name, price, image)")
-
-//         .eq("id", productId)
-//         .single();
-
-//       if (error) {
-//         console.error("Supabase Error:", error.message);
-//       } else {
-//         setProduct(data);
-//         if (data.images?.length > 0) {
-//           setMainImage(getImageSrc(data.images[0]));
-//         }
-//       }
-//     };
-
-//     fetchProduct();
-//   }, [productId]);
-
-//   if (!product) return <div>Loading...</div>;
-
-//   return (
-//     <div className={styles.container}>
-//       <div className={styles.leftColumn}>
-//         {product.images?.map((img, idx) => (
-//           <div
-//             key={idx}
-//             className={`${styles.smallBox} ${mainImage === getImageSrc(img) ? styles.activeThumb : ""}`}
-//             onClick={() => setMainImage(getImageSrc(img))}
-//           >
-//             <Image src={getImageSrc(img)} alt={product.title} width={80} height={80} />
-//           </div>
-//         ))}
-//       </div>
-
-//       <div className={styles.mainImage}>
-//         <Image src={mainImage} alt={product.title} width={400} height={400} />
-//       </div>
-
-//       <div className={styles.rightColumn}>
-//         <h2 className={styles.productTitle}>{product.title}</h2>
-//         <div className={styles.ratingRow}>
-//           <span className={styles.reviews}>({product.reviews_count} Reviews)</span>
-//           <div className={styles.divider}></div>
-//           <span className={styles.stock}>
-//             {product.stock > 0 ? "In Stock" : "Out of Stock"}
-//           </span>
-//         </div>
-//         <div className={styles.price}>${product.price}</div>
-//         <p className={styles.description}>{product.description}</p>
-
-//         <div className={styles.underline}></div>
-
-//         <div className={styles.colorRow}>
-//           <span>Colours:</span>
-//           {product.colours?.map((color, idx) => (
-//             <div key={idx} style={{ backgroundColor: color }} className={styles.colorCircle}></div>
-//           ))}
-//         </div>
-
-//         <div className={styles.sizeRow}>
-//           <span className={styles.sizeLabel}>Size:</span>
-//           <div className={styles.sizeOptions}>
-//             {product.sizes?.map((size, idx) => (
-//               <div
-//                 key={idx}
-//                 className={`${styles.sizeBox} ${selectedSize === size ? styles.activeSize : ""}`}
-//                 onClick={() => setSelectedSize(size)}
-//               >
-//                 {size}
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         <div className={styles.actionRow}>
-//           <div className={styles.qtyBox}>
-//             <button>-</button>
-//             <span>1</span>
-//             <button>+</button>
-//           </div>
-//           <button className={styles.buyNow}>Buy Now</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-// "use client";
-
-// import { useEffect, useState } from "react"; // <-- use() hata diya
-// import Image from "next/image";
-// import { supabase } from "@/app/libr/supabaseClient";
-// import { getImageSrc } from "@/app/utils/getImageSrc";
-// import styles from "./productdetail.module.css";
-
-// interface Product {
-//   id: number;
-//   title: string;
-//   price: number;
-//   description: string;
-//   images: string[];
-//   colours: string[];
-//   sizes: string[];
-//   stock: number;
-//   reviews_count: number;
-// }
-
-// export default function ProductDetailPage({ params }: { params: { id: string } }) {
-//   const { id } = params; // <-- Ab simple object hai, Promise nahi
-//   const productId = Number(id);
-
-//   const [product, setProduct] = useState<Product | null>(null);
-//   const [mainImage, setMainImage] = useState<string>("");
-//   const [selectedSize, setSelectedSize] = useState<string | null>(null);
-
+//   // fetch product
 //   useEffect(() => {
 //     if (!productId) return;
 
@@ -620,14 +311,12 @@
 //       const { data, error } = await supabase
 //         .from("productdetail")
 //         .select(
-//           "id, title, price, description, images, colours, sizes, stock, reviews_count, products:products!fk_product (id, name, price, image)"
+//           "id, title, price, description, images, colours, sizes, stock, reviews_count"
 //         )
 //         .eq("id", productId)
 //         .single();
 
-//       if (error) {
-//         console.error("Supabase Error:", error.message);
-//       } else {
+//       if (!error && data) {
 //         setProduct(data);
 //         if (data.images?.length > 0) {
 //           setMainImage(getImageSrc(data.images[0]));
@@ -638,52 +327,92 @@
 //     fetchProduct();
 //   }, [productId]);
 
-//   if (!product) return <div>Loading...</div>;
+//   if (!product) return <div className="text-center mt-10">Loading...</div>;
 
 //   return (
-//     <div className={styles.container}>
-//       <div className={styles.leftColumn}>
+//     <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+//       {/* Thumbnails */}
+//       <div className="flex md:flex-col gap-3">
 //         {product.images?.map((img, idx) => (
 //           <div
 //             key={idx}
-//             className={`${styles.smallBox} ${mainImage === getImageSrc(img) ? styles.activeThumb : ""}`}
+//             className={`border rounded-xl p-1 cursor-pointer transition ${
+//               mainImage === getImageSrc(img)
+//                 ? "border-blue-500"
+//                 : "border-gray-200"
+//             }`}
 //             onClick={() => setMainImage(getImageSrc(img))}
 //           >
-//             <Image src={getImageSrc(img)} alt={product.title} width={80} height={80} />
+//             <Image
+//               src={getImageSrc(img)}
+//               alt={product.title}
+//               width={80}
+//               height={80}
+//               className="rounded-lg"
+//             />
 //           </div>
 //         ))}
 //       </div>
 
-//       <div className={styles.mainImage}>
-//         <Image src={mainImage} alt={product.title} width={400} height={400} />
+//       {/* Main Image */}
+//       <div className="flex justify-center items-center border rounded-xl p-4">
+//         <Image
+//           src={mainImage}
+//           alt={product.title}
+//           width={400}
+//           height={400}
+//           className="rounded-lg"
+//         />
 //       </div>
 
-//       <div className={styles.rightColumn}>
-//         <h2 className={styles.productTitle}>{product.title}</h2>
-//         <div className={styles.ratingRow}>
-//           <span className={styles.reviews}>({product.reviews_count} Reviews)</span>
-//           <div className={styles.divider}></div>
-//           <span className={styles.stock}>{product.stock > 0 ? "In Stock" : "Out of Stock"}</span>
+//       {/* Product Info */}
+//       <div className="flex flex-col gap-4">
+//         <h2 className="text-2xl font-semibold">{product.title}</h2>
+
+//         <div className="flex items-center gap-3 text-sm">
+//           <span className="text-gray-500">
+//             ({product.reviews_count} Reviews)
+//           </span>
+//           <div className="w-px h-4 bg-gray-300"></div>
+//           <span
+//             className={`${
+//               product.stock > 0 ? "text-green-600" : "text-red-500"
+//             }`}
+//           >
+//             {product.stock > 0 ? "In Stock" : "Out of Stock"}
+//           </span>
 //         </div>
-//         <div className={styles.price}>${product.price}</div>
-//         <p className={styles.description}>{product.description}</p>
 
-//         <div className={styles.underline}></div>
+//         <div className="text-2xl font-bold">${product.price}</div>
 
-//         <div className={styles.colorRow}>
-//           <span>Colours:</span>
-//           {product.colours?.map((color, idx) => (
-//             <div key={idx} style={{ backgroundColor: color }} className={styles.colorCircle}></div>
-//           ))}
+//         <p className="text-gray-600">{product.description}</p>
+
+//         {/* Colors */}
+//         <div className="flex items-center gap-2">
+//           <span className="font-medium">Colours:</span>
+//           <div className="flex gap-2">
+//             {product.colours?.map((color, idx) => (
+//               <div
+//                 key={idx}
+//                 className="w-6 h-6 rounded-full border border-gray-300"
+//                 style={{ backgroundColor: color }}
+//               ></div>
+//             ))}
+//           </div>
 //         </div>
 
-//         <div className={styles.sizeRow}>
-//           <span className={styles.sizeLabel}>Size:</span>
-//           <div className={styles.sizeOptions}>
+//         {/* Sizes */}
+//         <div>
+//           <span className="font-medium">Size:</span>
+//           <div className="flex gap-2 mt-2">
 //             {product.sizes?.map((size, idx) => (
 //               <div
 //                 key={idx}
-//                 className={`${styles.sizeBox} ${selectedSize === size ? styles.activeSize : ""}`}
+//                 className={`px-3 py-1 border rounded-lg cursor-pointer ${
+//                   selectedSize === size
+//                     ? "bg-blue-500 text-white"
+//                     : "border-gray-300"
+//                 }`}
 //                 onClick={() => setSelectedSize(size)}
 //               >
 //                 {size}
@@ -692,13 +421,16 @@
 //           </div>
 //         </div>
 
-//         <div className={styles.actionRow}>
-//           <div className={styles.qtyBox}>
-//             <button>-</button>
-//             <span>1</span>
-//             <button>+</button>
+//         {/* Buy */}
+//         <div className="flex gap-4 items-center mt-4">
+//           <div className="flex items-center border rounded-lg">
+//             <button className="px-3 py-1">-</button>
+//             <span className="px-3">1</span>
+//             <button className="px-3 py-1">+</button>
 //           </div>
-//           <button className={styles.buyNow}>Buy Now</button>
+//           <button className="bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition">
+//             Buy Now
+//           </button>
 //         </div>
 //       </div>
 //     </div>
@@ -706,13 +438,14 @@
 // }
 
 
-"use client";
 
-import { useEffect, useState } from "react";
+
+
 import Image from "next/image";
 import { supabase } from "@/app/libr/supabaseClient";
 import { getImageSrc } from "@/app/utils/getImageSrc";
-import styles from "./productdetail.module.css";
+import { Key } from "react";
+
 
 interface Product {
   id: number;
@@ -726,90 +459,109 @@ interface Product {
   reviews_count: number;
 }
 
-export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const [productId, setProductId] = useState<number | null>(null);
-  const [product, setProduct] = useState<Product | null>(null);
-  const [mainImage, setMainImage] = useState<string>("");
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+type ProductDetailPageProps = {
+  params: {
+    id: string;
+  };
+};
 
-  // ✅ Promise unwrap here safely
-  useEffect(() => {
-    params.then(({ id }) => setProductId(Number(id)));
-  }, [params]);
+// export default async function ProductDetailPage({ params }: ProductDetailProps) {
+//   const productId = Number(params.id);
+export default async function ProductDetailPage({ params }: ProductDetailPageProps) {
+  const productId = Number(params.id);  
 
-  // ✅ Fetch product when productId is ready
-  useEffect(() => {
-    if (!productId) return;
+  const { data: product, error } = await supabase
+    .from("productdetail")
+    .select(
+      "id, title, price, description, images, colours, sizes, stock, reviews_count"
+    )
+    .eq("id", productId)
+    .single();
 
-    const fetchProduct = async () => {
-      const { data, error } = await supabase
-        .from("productdetail")
-        .select(
-          "id, title, price, description, images, colours, sizes, stock, reviews_count, products:products!fk_product (id, name, price, image)"
-        )
-        .eq("id", productId)
-        .single();
+  if (error || !product) {
+    return <div className="text-center mt-10">Product not found.</div>;
+  }
 
-      if (error) {
-        console.error("Supabase Error:", error.message);
-      } else {
-        setProduct(data);
-        if (data.images?.length > 0) {
-          setMainImage(getImageSrc(data.images[0]));
-        }
-      }
-    };
-
-    fetchProduct();
-  }, [productId]);
-
-  if (!product) return <div>Loading...</div>;
+  const mainImage = product.images?.length > 0 ? getImageSrc(product.images[0]) : "";
 
   return (
-    <div className={styles.container}>
-      <div className={styles.leftColumn}>
-        {product.images?.map((img, idx) => (
+    <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Left Thumbnails */}
+      <div className="flex md:flex-col gap-3">
+        {product.images?.map((img: string | undefined, idx: Key | null | undefined) => (
           <div
             key={idx}
-            className={`${styles.smallBox} ${mainImage === getImageSrc(img) ? styles.activeThumb : ""}`}
-            onClick={() => setMainImage(getImageSrc(img))}
+            className="border rounded-xl p-1 cursor-pointer transition"
           >
-            <Image src={getImageSrc(img)} alt={product.title} width={80} height={80} />
+            <Image
+              src={getImageSrc(img)}
+              alt={product.title}
+              width={80}
+              height={80}
+              className="rounded-lg"
+            />
           </div>
         ))}
       </div>
 
-      <div className={styles.mainImage}>
-        <Image src={mainImage} alt={product.title} width={400} height={400} />
+      {/* Main Image */}
+      <div className="flex justify-center items-center border rounded-xl p-4">
+        {mainImage ? (
+          <Image
+            src={mainImage}
+            alt={product.title}
+            width={400}
+            height={400}
+            className="rounded-lg"
+          />
+        ) : (
+          <span>No Image</span>
+        )}
       </div>
 
-      <div className={styles.rightColumn}>
-        <h2 className={styles.productTitle}>{product.title}</h2>
-        <div className={styles.ratingRow}>
-          <span className={styles.reviews}>({product.reviews_count} Reviews)</span>
-          <div className={styles.divider}></div>
-          <span className={styles.stock}>{product.stock > 0 ? "In Stock" : "Out of Stock"}</span>
+      {/* Product Info */}
+      <div className="flex flex-col gap-4">
+        <h2 className="text-2xl font-semibold">{product.title}</h2>
+
+        <div className="flex items-center gap-3 text-sm">
+          <span className="text-gray-500">
+            ({product.reviews_count} Reviews)
+          </span>
+          <div className="w-px h-4 bg-gray-300"></div>
+          <span
+            className={`${
+              product.stock > 0 ? "text-green-600" : "text-red-500"
+            }`}
+          >
+            {product.stock > 0 ? "In Stock" : "Out of Stock"}
+          </span>
         </div>
-        <div className={styles.price}>${product.price}</div>
-        <p className={styles.description}>{product.description}</p>
 
-        <div className={styles.underline}></div>
+        <div className="text-2xl font-bold">${product.price}</div>
+        <p className="text-gray-600">{product.description}</p>
 
-        <div className={styles.colorRow}>
-          <span>Colours:</span>
-          {product.colours?.map((color, idx) => (
-            <div key={idx} style={{ backgroundColor: color }} className={styles.colorCircle}></div>
-          ))}
-        </div>
-
-        <div className={styles.sizeRow}>
-          <span className={styles.sizeLabel}>Size:</span>
-          <div className={styles.sizeOptions}>
-            {product.sizes?.map((size, idx) => (
+        {/* Colours */}
+        <div className="flex items-center gap-2">
+          <span className="font-medium">Colours:</span>
+          <div className="flex gap-2">
+            {product.colours?.map((color:string, idx:number) => (
               <div
                 key={idx}
-                className={`${styles.sizeBox} ${selectedSize === size ? styles.activeSize : ""}`}
-                onClick={() => setSelectedSize(size)}
+                className="w-6 h-6 rounded-full border border-gray-300"
+                style={{ backgroundColor: color }}
+              ></div>
+            ))}
+          </div>
+        </div>
+
+        {/* Sizes */}
+        <div>
+          <span className="font-medium">Size:</span>
+          <div className="flex gap-2 mt-2">
+            {product.sizes?.map((size:string, idx:number) => (
+              <div
+                key={idx}
+                className="px-3 py-1 border rounded-lg"
               >
                 {size}
               </div>
@@ -817,13 +569,16 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
           </div>
         </div>
 
-        <div className={styles.actionRow}>
-          <div className={styles.qtyBox}>
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
+        {/* Buy Section */}
+        <div className="flex gap-4 items-center mt-4">
+          <div className="flex items-center border rounded-lg">
+            <button className="px-3 py-1">-</button>
+            <span className="px-3">1</span>
+            <button className="px-3 py-1">+</button>
           </div>
-          <button className={styles.buyNow}>Buy Now</button>
+          <button className="bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition">
+            Buy Now
+          </button>
         </div>
       </div>
     </div>
