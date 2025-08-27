@@ -1,315 +1,218 @@
 .todayWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 1170px;
-  margin: auto;
-  padding: 20px 0;
+  width: 100%;
+  padding: 20px 40px;
+  background: #fff;
+  border-radius: 12px;
+  
+  margin: 20px auto;
+  max-width: 1200px;
 }
 
-/* === Header (Frame 725) === */
-
-
+/* Header Section */
 .header {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between; /* pushes .left and .right apart */
-  width: 1170px;   /* full width */
-  height: 103px;
-  padding: 0;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-/* === Left Section (Frame 626) === */
 .left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-  width: 211px;
-  height: 103px;
+  gap: 5px;
 }
 
-/* === Tag Box Row (Frame 625) === */
 .tagRow {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 16px;
-  width: auto;
-  height: 40px;
-   
+  gap: 6px;
 }
 
 .tagBox {
-  width: 20px;
-  height: 40px;
-  background: #DB4444;
-  border-radius: 4px;
+  width: 14px;
+  height: 14px;
+  background-color: #db4444;
+  border-radius: 3px;
 }
 
 .tag {
-  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 20px;
-  color: #DB4444;
-  white-space: nowrap;
+  color: #db4444;
 }
-
-/* Flash Sales */
 
 .title {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 48px;  /* 133% */
-  letter-spacing: 0.04em;
-  color: #000000;
-  width: 211px;
-  height: 48px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  white-space: nowrap;   /* ✅ keeps “Flash Sales” in one line */
-  overflow: hidden;
-  text-overflow: ellipsis; /* safety if container shrinks */
-  margin-top: 5px;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-/* === Right Section (countdown + arrows) === */
-.right {
-  display: flex;
-  align-items: flex-end;
-  gap: 20px;  /* spacing between countdown and arrows */
-}
-
-/* === Countdown (Group 1000005937) === */
-
-
+/* Countdown Section */
 .countdown {
   display: flex;
-  align-items: flex-end;
-  gap: 20px;
-  height: 50px;
+  align-items: center;
+  gap: 10px;
 }
 
 .countdown div {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  text-align: left;
-}
-.countdown span {
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-  color: #000000;
+  align-items: center;
 }
 
 .countdown p {
-  font-family: 'Inter', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 30px;
-  letter-spacing: 0.04em;
-  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-/* === Arrows === */
-.arrows {
-  display: flex;
-  gap: 5px;
-}
-
-.arrows button {
-  border: 1px solid #ccc;
-  background: white;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  font-size: 18px;
-  cursor: pointer;
-
-  margin-right: 20px;
-}
-/* Product Section */
-.products {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  background-color: transparent;
-  
-
-}
-
-
-
-
-
-
-
-.discount {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #DB4444;
-  color: #FAFAFA;
+.countdown span {
   font-size: 12px;
-  padding: 4px 12px;
-  border-radius: 4px;
-}
-
-
-
-.actions {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.actionBtn {
-  width: 34px;
-  height: 34px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: 1px solid var(--border);
-}
-
-
-
-
-
-.card {
-  background: #f5f5f5; 
-  width: 270px;
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-}
-
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-
-
-
-/* Product details below */
-.details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-
-.priceRow {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.price {
-  font-size: 16px;
-  font-weight: 500;
-  color: #DB4444;
-  gap: 10px;
-}
-
-.oldPrice {
-  font-size: 16px;
-  font-weight: 500;
-  color: #000;
-  opacity: 0.5;
-  text-decoration: line-through;
-}
-
-.ratingRow {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-
-.buttonContainer {
-  display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;      /* centers vertically */
-  margin-top: 40px;         /* space above products */
-  margin-bottom: 60px;      /* space below */
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 48px;
-  gap: 10px;
-
-  width: 234px;
-  height: 56px;
-
-  background: #DB4444;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-
-  font-family: 'Poppins', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-
-  color: #FAFAFA;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background: #b93636; /* hover effect */
-}
-
-
-.line {
-  width: 100%;
-  max-width: 1170px;
-  margin: 40px auto 0; /* upar thoda space aur center align */
-  border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+  color: #666;
 }
 
 .colon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-  margin: 0 8px;
+  width: 5px;
+  height: 5px;
+  background: #db4444;
+  border-radius: 50%;
+  align-self: center;
 }
 
-.colon span {
-  width: 6px;
-  height: 6px;
+/* Arrow Buttons */
+.arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.arrows button {
+  border: none;
+  background: #f5f5f5;
   border-radius: 50%;
-  background: #E07575; /* red dots (same as figma) */
-  display: block;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.arrows button:hover {
+  background: #db4444;
+  color: #fff;
+}
+
+/* Products Section */
+.products {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.products::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product Card */
+.card {
+  flex: 0 0 220px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+  border-radius: 8px;
+}
+
+/* Wishlist & View Buttons */
+.actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.actionBtn {
+  background: #fff;
+  border: 1px solid #ddd;
+  
+  border-radius: 50%;
+  padding: 4px 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background: #db4444;
+  color: #fff;
+}
+
+/* Product Text */
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0 5px 0;
+}
+
+.price {
+  color: #db4444;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.rating {
+  font-size: 14px;
+  color: #f5a623;
+}
+
+/* Button Container */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button {
+  background: #db4444;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #b83636;
+}
+
+/* Line Divider */
+.line {
+  margin-top: 20px;
+  height: 1px;
+  background: #eee;
+  width: 100%;
+}
+
+.imageBox {
+  background: #f5f5f5; /* grey background */
+  border-radius: 8px;
+  padding: 10px;       /* thoda space image ke around */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

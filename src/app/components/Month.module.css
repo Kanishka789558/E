@@ -1,29 +1,25 @@
-/* Container Section */
-.mathSection {
-  position: relative; /* relative instead of absolute for the container */
-  width: 1170px;
-  margin: 0 auto; /* center horizontally */
+.monthSection {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 60px;
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-/* Header Row */
 .headerRow {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: flex-end;
+  justify-content: space-between;
   width: 100%;
+  height: 108px;
 }
 
-.left {
+.headerLeft {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.tagRow {
-  display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 16px;
 }
@@ -33,56 +29,92 @@
   height: 40px;
   background: #DB4444;
   border-radius: 4px;
-  margin-top: 150px;
 }
 
-.tag {
-  font-family: 'Poppins', sans-serif;
+.tagText {
+  font-family: "Poppins";
   font-weight: 600;
   font-size: 16px;
   color: #DB4444;
-  margin-top: 150px;
 }
 
-.heading {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
+.headerTitle {
+  font-family: "Inter";
   font-size: 36px;
+  font-weight: 600;
   line-height: 48px;
-  color: #000;
   letter-spacing: 0.04em;
+  color: #000;
 }
 
-.viewBtn {
+.viewAll {
+  padding: 16px 48px;
   background: #DB4444;
   color: #FAFAFA;
-  padding: 16px 48px;
-  border-radius: 4px;
   border: none;
-  font-family: 'Poppins', sans-serif;
+  border-radius: 4px;
+  font-family: "Poppins";
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
 }
 
-/* Products Row */
-.productsRow {
+.productsGrid {
   display: flex;
+  flex-direction: row;
   gap: 30px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  width: 100%;
+  height: 350px;
 }
 
-/* Individual Product Card */
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 270px;
+  height: 350px;
+}
 
+.productImageBox {
+  width: 270px;
+  height: 250px;
+  background: #F5F5F5;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/* Product Info */
+.iconGroup {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-.productTitle {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
+.iconCircle {
+  width: 34px;
+  height: 34px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.productName {
+  font-family: "Poppins";
   font-size: 16px;
-  text-align: center;
+  font-weight: 500;
   color: #000;
 }
 
@@ -92,124 +124,37 @@
   align-items: center;
 }
 
-.newPrice {
-  font-family: 'Poppins', sans-serif;
+.price {
+  color: #DB4444;
+  font-family: "Poppins";
   font-weight: 500;
   font-size: 16px;
-  color: #DB4444;
 }
 
 .oldPrice {
-  font-family: 'Poppins', sans-serif;
+  text-decoration: line-through;
+  color: #000;
+  opacity: 0.5;
+  font-family: "Poppins";
   font-weight: 500;
   font-size: 16px;
-  color: #000;
-  text-decoration: line-through;
-  opacity: 0.5;
 }
 
 .ratingRow {
   display: flex;
-  align-items: center;
   gap: 8px;
+  align-items: center;
 }
 
 .stars {
-  display: flex;
-  gap: 4px;
+  color: #FFAD33;
+  font-size: 16px;
 }
 
-.stars span {
-  width: 20px;
-  height: 20px;
-  background: #FFAD33;
-  border-radius: 2px;
-}
-
-.reviews {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+.reviewCount {
+  font-family: "Poppins";
   font-size: 14px;
+  font-weight: 600;
+  opacity: 0.5;
   color: #000;
- opacity: 0.5;
-}
-
-/* ========== Action Buttons (Frame 568) ========== */
-.actionBtns {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-
-  position: absolute;
-  width: 34px;
-  height: 76px;
-  right: 12px;
-  top: 12px;
-}
-
-.actionBtn {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border: 1.5px solid #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.actionBtn svg {
-  width: 16px;
-  height: 16px;
-}
-
-
-
-
-
-
-
-
-
-
-
-/* Card */
-.card {
-  position: relative;
-  width: 270px;   /* match figma */
-  height: 350px;  /* give enough room for image + info */
-  background: transparent; /* remove full grey here */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Image Box */
-.imageBox {
-  position: relative; /* ❌ remove absolute */
-  width: 270px;
-  height: 250px;
-  background: #F5F5F5; /* grey only for image area */
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* Product Image */
-.productImage {
-  object-fit: contain;
-}
-
-/* Info Box */
-.infoBox {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* instead of center */
-  gap: 8px;
 }
