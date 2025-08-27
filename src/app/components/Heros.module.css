@@ -157,3 +157,31 @@
   border-radius: 50%;
   background: #db4444;
 }
+
+
+.catRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown {
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.dropdown:hover {
+  background: #f2f2f2;
+}

@@ -53,3 +53,68 @@
   color: #000000;
   margin-top: 40px;
 }
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 88px;
+  margin: 80px auto;
+  max-width: 1170px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 249px;
+  height: 161px;
+  text-align: center;
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #000;
+  position: relative;
+}
+
+.iconWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #2F2E30;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.icon {
+  color: #fff;
+  font-size: 32px;
+}
+
+.textWrapper h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000;
+  margin: 0;
+}
+
+.textWrapper p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000;
+  margin: 0;
+}

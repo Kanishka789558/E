@@ -1,79 +1,9 @@
 
-// "use client";
-// import React from "react";
-// import "./Hero.css";
-// import Image from "next/image";
-
-// const categories = [
-//   "Woman's Fashion",
-//   "Men's Fashion",
-//   "Electronics",
-//   "Home & Lifestyle",
-//   "Medicine",
-//   "Sports & Outdoor",
-//   "Baby's & Toys",
-//   "Groceries & Pets",
-//   "Health & Beauty",
-// ];
-
-// export default function Hero() {
-//   return (
-//     <div className="hero">
-//       {/* Left Category Menu */}
-//       <div className="hero-categories">
-//         <ul>
-//           {categories.map((cat, index) => (
-//             <li key={index}>
-//               {cat} <span className="arrow">›</span>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-
-//       {/* Right Banner */}
-//       <div className="hero-banner">
-//         <Image
-//           src="/hero-banner.jpg" // stored in /public
-//           alt="iPhone 14 Banner"
-//           width={900}
-//           height={400}
-//           priority
-//           className="banner-img"
-//         />
-
-//         {/* Text Overlay */}
-//         <div className="banner-text">
-//           <Image
-//             src="/apple-logo.png" // stored in /public
-//             alt="Apple Logo"
-//             width={20}
-//             height={20}
-//             className="apple-logo"
-//           />
-//           <p className="series">iPhone 14 Series</p>
-//           <h2>Up to 10% off Voucher</h2>
-//           <button className="shop-now">
-//             Shop Now <span>→</span>
-//           </button>
-//         </div>
-
-//         {/* Slider Dots */}
-//         <div className="banner-dots">
-//           <span></span><span></span><span></span><span></span>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
 
 // "use client";
 // import React from "react";
 // import Image from "next/image";
-
 // import styles from "./Heros.module.css";
-
 
 // const categories = [
 //   "Woman's Fashion",
@@ -91,8 +21,8 @@
 //   return (
 //     <div className={styles.hero}>
 //       {/* Left Category Menu */}
-//       <div className="hero-categories">
-//         <ul>
+//       <div>
+//         <ul className={styles.categoryList}>
 //           {categories.map((cat, index) => (
 //             <li key={index}>
 //               {cat} <span className={styles.arrow}>›</span>
@@ -100,35 +30,154 @@
 //           ))}
 //         </ul>
 //       </div>
-      
+
 //       {/* Banner Section */}
-//       <div className={styles.hero-banner}>
+//       <div className={styles.heroBanner}>
 //         {/* Background Image */}
 //         <Image
 //           src="/hero-banner.jpg"
 //           alt="iPhone Banner"
-//           width={892}
-//           height={344}
+//           width= {496}
+//           height= {352}
 //           priority
-//           className={styles.banner-img}
+//           className={styles.bannerImg}
 //         />
 
-//         {/* Apple Logo */}
-//         <Image
-//           src="/apple-logo.png"
-//           alt="Apple Logo"
-//           width={40}
-//           height={49}
-//           className={styles.apple-logo}
-//         />
+        
+//         {/* Apple Logo + Series (Frame 563) */}
+//         <div className={styles.appleSeriesWrapper}>
+//           <Image
+//             src="/apple-logo.png"
+//             alt="Apple Logo"
+//             width={40}
+//             height={49}
+//             className={styles.appleLogo}
+//           />
+//           <p className={styles.series}>iPhone 14 Series</p>
+//         </div>
+
 
 //         {/* Overlay Text */}
-//         <div className={styles.banner-text}>
-//           <p className={styles.series}>iPhone 14 Series</p>
+//         <div className={styles.bannerText}>
+          
 //           <h2>Up to 10% off Voucher</h2>
-//           <button className={styles.shop-now}>
+//           <button className={styles.shopNow}>
 //             Shop Now <span>→</span>
 //           </button>
+
+//         </div>
+//         <div className={styles.carouselDots}>
+//           <span className={`${styles.dot} ${styles.active}`}></span>
+//           <span className={styles.dot}></span>
+//           <span className={styles.dot}></span>
+//           <span className={styles.dot}></span>
+//           <span className={styles.dot}></span>
+//         </div>
+
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+// "use client";
+// import React, { useState } from "react";
+// import Image from "next/image";
+// import { useRouter } from "next/navigation";
+// import styles from "./Heros.module.css";
+
+// const categories = [
+//   "Woman's Fashion",
+//   "Men's Fashion",
+//   "Electronics",
+//   "Home & Lifestyle",
+//   "Medicine",
+//   "Sports & Outdoor",
+//   "Baby's & Toys",
+//   "Groceries & Pets",
+//   "Health & Beauty",
+// ];
+
+// export default function Hero() {
+//   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+//   const router = useRouter();
+
+//   const handleArrowClick = (index: number) => {
+//     setOpenDropdown(openDropdown === index ? null : index);
+//   };
+
+//   const handleCategorySelect = (category: string) => {
+//     router.push(`/category/${encodeURIComponent(category)}`);
+//   };
+
+//   return (
+//     <div className={styles.hero}>
+//       {/* Left Category Menu */}
+//       <div>
+//         <ul className={styles.categoryList}>
+//           {categories.map((cat, index) => (
+//             <li key={index} className={styles.categoryItem}>
+//               <div className={styles.catRow}>
+//                 {cat}
+//                 <span
+//                   className={styles.arrow}
+//                   onClick={() => handleArrowClick(index)}
+//                 >
+//                   ›
+//                 </span>
+//               </div>
+
+//               {/* Dropdown */}
+//               {openDropdown === index && (
+//                 <div className={styles.dropdown}>
+//                   <p onClick={() => handleCategorySelect(cat)}>
+//                     View {cat} Products
+//                   </p>
+                  
+//                 </div>
+//               )}
+//             </li>
+//           ))}
+//         </ul>
+//       </div>
+
+//       {/* Banner Section */}
+//       <div className={styles.heroBanner}>
+//         <Image
+//           src="/hero-banner.jpg"
+//           alt="iPhone Banner"
+//           width={496}
+//           height={352}
+//           priority
+//           className={styles.bannerImg}
+//         />
+
+//         <div className={styles.appleSeriesWrapper}>
+//           <Image
+//             src="/apple-logo.png"
+//             alt="Apple Logo"
+//             width={40}
+//             height={49}
+//             className={styles.appleLogo}
+//           />
+//           <p className={styles.series}>iPhone 14 Series</p>
+//         </div>
+
+//         <div className={styles.bannerText}>
+//           <h2>Up to 10% off Voucher</h2>
+//           <button className={styles.shopNow}>
+//             Shop Now <span>→</span>
+//           </button>
+//         </div>
+
+//         <div className={styles.carouselDots}>
+//           <span className={`${styles.dot} ${styles.active}`}></span>
+//           <span className={styles.dot}></span>
+//           <span className={styles.dot}></span>
+//           <span className={styles.dot}></span>
+//           <span className={styles.dot}></span>
 //         </div>
 //       </div>
 //     </div>
@@ -137,91 +186,91 @@
 
 
 
-
-// import Image from "next/image";
-//  import styles from "./Heros.module.css";
-
-// export default function Hero() {
-//   return (
-//     <div className="hero-container">
-//       {/* Left Category List */}
-//       <ul className="category-list">
-//         <li>Woman&apos;s Fashion ›</li>
-//         <li>Men&apos;s Fashion ›</li>
-//         <li>Electronics ›</li>
-//         <li>Home &amp; Lifestyle ›</li>
-//         <li>Medicine ›</li>
-//         <li>Sports &amp; Outdoor ›</li>
-//         <li>Baby&apos;s &amp; Toys ›</li>
-//         <li>Groceries &amp; Pets ›</li>
-//         <li>Health &amp; Beauty ›</li>
-//       </ul>
-
-//       {/* Right Hero Section */}
-//       <div className="hero-banner">
-//         {/* Apple logo */}
-//         <Image
-//           src="/apple-logo.png"
-//           alt="Apple Logo"
-//           width={40}
-//           height={49}
-//           className="apple-logo"
-//         />
-
-//         {/* iPhone image */}
-//         <Image
-//           src="/hero.JPG"
-//           alt="iPhone"
-//           width={496}
-//           height={352}
-//           className="iphone-img"
-//         />
-
-//         {/* Caption */}
-//         <p className="hero-caption">iPhone 14 Series</p>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import styles from "./Heros.module.css";
 
 const categories = [
-  "Woman's Fashion",
-  "Men's Fashion",
-  "Electronics",
-  "Home & Lifestyle",
-  "Medicine",
-  "Sports & Outdoor",
-  "Baby's & Toys",
-  "Groceries & Pets",
-  "Health & Beauty",
+  {
+    name: "Woman's Fashion",
+    subcategories: ["Dresses", "Shoes", "Bags"],
+  },
+  {
+    name: "Men's Fashion",
+    subcategories: ["Shirts", "Jeans", "Shoes"],
+  },
+  {
+    name: "Electronics",
+    subcategories: ["Mobiles", "Laptops", "Accessories"],
+  },
+  {
+    name: "Home & Lifestyle",
+    subcategories: ["Furniture", "Decor", "Appliances"],
+  },
+  { name: "Medicine", subcategories: ["Vitamins", "OTC", "Prescriptions"] },
+  {
+    name: "Sports & Outdoor",
+    subcategories: ["Fitness", "Cycling", "Camping"],
+  },
+  {
+    name: "Baby's & Toys",
+    subcategories: ["Toys", "Clothing", "Accessories"],
+  },
+  {
+    name: "Groceries & Pets",
+    subcategories: ["Groceries", "Pet Food", "Pet Care"],
+  },
+  {
+    name: "Health & Beauty",
+    subcategories: ["Skincare", "Makeup", "Wellness"],
+  },
 ];
 
 export default function Hero() {
+  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+  const router = useRouter();
+
+  const handleArrowClick = (index: number) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
+
+  const handleCategorySelect = (subcategory: string) => {
+    router.push(`/category/${encodeURIComponent(subcategory)}`);
+  };
+
   return (
     <div className={styles.hero}>
       {/* Left Category Menu */}
       <div>
         <ul className={styles.categoryList}>
           {categories.map((cat, index) => (
-            <li key={index}>
-              {cat} <span className={styles.arrow}>›</span>
+            <li key={index} className={styles.categoryItem}>
+              <div className={styles.catRow}>
+                {cat.name}
+                <span
+                  className={styles.arrow}
+                  onClick={() => handleArrowClick(index)}
+                >
+                  ›
+                </span>
+              </div>
+
+              {/* Dropdown */}
+              {openDropdown === index && (
+                <div className={styles.dropdown}>
+                  {cat.subcategories.map((sub, subIndex) => (
+                    <p
+                      key={subIndex}
+                      onClick={() => handleCategorySelect(sub)}
+                      className={styles.dropdownItem}
+                    >
+                      {sub}
+                    </p>
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -229,18 +278,15 @@ export default function Hero() {
 
       {/* Banner Section */}
       <div className={styles.heroBanner}>
-        {/* Background Image */}
         <Image
           src="/hero-banner.jpg"
           alt="iPhone Banner"
-          width= {496}
-          height= {352}
+          width={496}
+          height={352}
           priority
           className={styles.bannerImg}
         />
 
-        
-        {/* Apple Logo + Series (Frame 563) */}
         <div className={styles.appleSeriesWrapper}>
           <Image
             src="/apple-logo.png"
@@ -252,16 +298,13 @@ export default function Hero() {
           <p className={styles.series}>iPhone 14 Series</p>
         </div>
 
-
-        {/* Overlay Text */}
         <div className={styles.bannerText}>
-          
           <h2>Up to 10% off Voucher</h2>
           <button className={styles.shopNow}>
             Shop Now <span>→</span>
           </button>
-
         </div>
+
         <div className={styles.carouselDots}>
           <span className={`${styles.dot} ${styles.active}`}></span>
           <span className={styles.dot}></span>
@@ -269,7 +312,6 @@ export default function Hero() {
           <span className={styles.dot}></span>
           <span className={styles.dot}></span>
         </div>
-
       </div>
     </div>
   );

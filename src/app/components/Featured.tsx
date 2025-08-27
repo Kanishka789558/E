@@ -53,7 +53,7 @@ export default function Featured() {
             </div>
             </div>
           ))}
-      </section>
+        </section>
       </div>
       
 

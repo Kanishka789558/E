@@ -193,7 +193,7 @@ export default function Footer() {
                 <Image src="/googleplay.png" alt="Google Play" width={104} height={30} />
               </div>
               <div className={styles.storeButton}>
-                <Image src="/appstore.png" alt="App Store" width={104} height={30} />
+                <Image src="/googleplay.png" alt="App Store" width={104} height={30} />
               </div>
             </div>
           </div>
