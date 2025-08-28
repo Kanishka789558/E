@@ -1,133 +1,5 @@
-// 'use client';
+'use client'
 
-// export default function Footer(){
-//   return (
-//     <footer className="bg-black text-white mt-24">
-//       <div className="container-xxl grid md:grid-cols-5 gap-10 py-16">
-//         <div>
-//           <h3 className="text-2xl font-semibold">Exclusive</h3>
-//           <p className="mt-4 text-sm">Subscribe</p>
-//           <p className="text-sm text-gray-300 mb-4">Get 10% off your first order</p>
-//           <div className="flex bg-white rounded-md overflow-hidden max-w-xs">
-//             <input placeholder="Enter your email" className="px-3 py-2 flex-1 text-black outline-none"/>
-//             <button className="px-4 text-black">→</button>
-//           </div>
-//         </div>
-//         <div>
-//           <h4 className="font-semibold mb-4">Support</h4>
-//           <ul className="space-y-3 text-sm text-gray-300">
-//             <li>111 Bijoy sarani, Dhaka</li>
-//             <li>exclusive@gmail.com</li>
-//             <li>+88015-88888-9999</li>
-//           </ul>
-//         </div>
-//         <div>
-//           <h4 className="font-semibold mb-4">Account</h4>
-//           <ul className="space-y-3 text-sm text-gray-300">
-//             <li>My Account</li>
-//             <li>Login / Register</li>
-//             <li>Cart</li>
-//             <li>Wishlist</li>
-//             <li>Shop</li>
-//           </ul>
-//         </div>
-//         <div>
-//           <h4 className="font-semibold mb-4">Quick Link</h4>
-//           <ul className="space-y-3 text-sm text-gray-300">
-//             <li>Privacy Policy</li>
-//             <li>Terms Of Use</li>
-//             <li>FAQ</li>
-//             <li>Contact</li>
-//           </ul>
-//         </div>
-//         <div>
-//           <h4 className="font-semibold mb-4">Download App</h4>
-//           <p className="text-xs text-gray-400 mb-3">Save $3 with App New User Only</p>
-//           <div className="flex gap-3 mb-5">
-//             <div className="bg-white w-24 h-24"/>
-//             <div className="space-y-3">
-//               <div className="w-40 h-12 bg-white rounded"/>
-//               <div className="w-40 h-12 bg-white rounded"/>
-//             </div>
-//           </div>
-//           <div className="flex gap-4 text-gray-300 text-sm">
-//             <span>FB</span><span>TW</span><span>IG</span><span>YT</span>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="border-t border-white/10 py-4 text-center text-gray-400 text-sm">© Copyright 2025 Exclusive</div>
-//     </footer>
-//   );
-// }
-
-
-
-// 'use client';
-// export default function Footer(){
-//   return (
-//     <footer className="bg-black text-white mt-24">
-//       <div className="container-xxl grid md:grid-cols-5 gap-10 py-16">
-//         <div>
-//           <h3 className="text-2xl font-semibold">Exclusive</h3>
-//           <p className="mt-4 text-sm">Subscribe</p>
-//           <p className="text-sm text-gray-300 mb-4">Get 10% off your first order</p>
-//           <div className="flex bg-white rounded-md overflow-hidden max-w-xs">
-//             <input placeholder="Enter your email" className="px-3 py-2 flex-1 text-black outline-none" />
-//             <button className="px-4 text-black">→</button>
-//           </div>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-4">Support</h4>
-//           <ul className="space-y-3 text-sm text-gray-300">
-//             <li>111 Bijoy sarani, Dhaka</li>
-//             <li>exclusive@gmail.com</li>
-//             <li>+88015-88888-9999</li>
-//           </ul>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-4">Account</h4>
-//           <ul className="space-y-3 text-sm text-gray-300">
-//             <li>My Account</li>
-//             <li>Login / Register</li>
-//             <li>Cart</li>
-//             <li>Wishlist</li>
-//             <li>Shop</li>
-//           </ul>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-4">Quick Link</h4>
-//           <ul className="space-y-3 text-sm text-gray-300">
-//             <li>Privacy Policy</li>
-//             <li>Terms Of Use</li>
-//             <li>FAQ</li>
-//             <li>Contact</li>
-//           </ul>
-//         </div>
-
-//         <div>
-//           <h4 className="font-semibold mb-4">Download App</h4>
-//           <p className="text-xs text-gray-400 mb-3">Save $3 with App New User Only</p>
-//           <div className="flex gap-3 mb-5">
-//             <div className="bg-white w-24 h-24" />
-//             <div className="space-y-3">
-//               <div className="w-40 h-12 bg-white rounded" />
-//               <div className="w-40 h-12 bg-white rounded" />
-//             </div>
-//           </div>
-//           <div className="flex gap-4 text-gray-300 text-sm">
-//             <span>FB</span><span>TW</span><span>IG</span><span>YT</span>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="border-t border-white/10 py-4 text-center text-gray-400 text-sm">© Copyright 2025 Exclusive</div>
-//     </footer>
-//   );
-// }
-
-"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -213,3 +85,48 @@ export default function Footer() {
   );
 }
 
+
+
+// import styles from "./Footer.tsx";
+
+// <footer className={styles.footer}>
+//   <div className={styles.innerContainer}>
+//     <div className={styles.column}>
+//       <h3 className={styles.logo}>Exclusive</h3>
+//       <p>Subscribe</p>
+//       <p>Get 10% off your first order</p>
+//       <div className={styles.emailBox}>
+//         <input type="email" placeholder="Enter your email" />
+//         <button>Subscribe</button>
+//       </div>
+//     </div>
+
+//     <div className={styles.column}>
+//       <h4>Support</h4>
+//       <p>111 Bijoy sarani, Dhaka</p>
+//       <p>exclusive@gmail.com</p>
+//       <p>+88015-88888-9999</p>
+//     </div>
+
+//     <div className={styles.column}>
+//       <h4>Account</h4>
+//       <p>My Account</p>
+//       <p>Login / Register</p>
+//       <p>Cart</p>
+//       <p>Wishlist</p>
+//       <p>Shop</p>
+//     </div>
+
+//     <div className={styles.column}>
+//       <h4>Quick Link</h4>
+//       <p>Privacy Policy</p>
+//       <p>Terms of Use</p>
+//       <p>FAQ</p>
+//       <p>Contact</p>
+//     </div>
+//   </div>
+
+//   <div className={styles.copy}>
+//     <p>© Copyright Rimel 2022. All rights reserved</p>
+//   </div>
+// </footer>

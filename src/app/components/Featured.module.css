@@ -61,7 +61,8 @@
   justify-content: center;
   align-items: center;
   gap: 88px;
-  margin: 80px auto;
+  
+  margin: 80px auto 0 auto;
   max-width: 1170px;
 }
 
@@ -118,3 +119,31 @@
   color: #000;
   margin: 0;
 }
+
+
+
+.productShowcaseWrapper {
+  max-width: 1170px;      /* Same width as banner/cards */
+  margin: 40px auto 0;    /* Top gap after heading */
+  display: flex;
+  justify-content: center; /* Center align */
+  align-items: center;
+  flex-wrap: wrap;         /* Responsive for small screens */
+  gap: 20px;               /* Space between product cards */
+}
+
+
+.productCard {
+  width: 250px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+}
+

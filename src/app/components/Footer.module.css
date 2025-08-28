@@ -1,28 +1,47 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 .footer {
-  position: absolute;
-  width: 1440px;
-  height: 440px;
-  left: 0;
-  top: 5462px;
+  width: 100%;
   background: #000;
-  color: #FAFAFA;
+  color: #fafafa;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
-  padding-top: 0; /* innerContainer ke top use kar rahe hai */
+  padding: 80px 0 40px;
+  margin-top: 60px; /* Yeh ensure karega ke hamesha neeche chipka rahe */
 }
 
 .innerContainer {
-  position: absolute;
-  top: 80px; /* Figma ke top ke hisaab se */
-  left: 135px; /* Figma left spacing */
-  width: 1170px; /* Figma width */
-  height: 236px;
+  max-width: 1170px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 20px;
 }
+
+.copy {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+  opacity: 0.6;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+}
+
+
+
+
 
 .column {
   display: flex;
@@ -147,26 +166,3 @@
   font-size: 16px;
   color: #FAFAFA;
 }
-
-.copy {
-  position: absolute;
-  width: 311px;
-  height: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 24px;
-  color: #FAFAFA;
-  opacity: 0.6;
-}
-
-
-
-
-
-
-
-
-
