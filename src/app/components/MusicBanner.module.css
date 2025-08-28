@@ -1,27 +1,28 @@
+
 /* Banner Wrapper (Frame 600) */
 .banner {
   position: relative;
   width: 1170px;
   height: 500px;
-  margin: 0 auto;
+  
+  margin: 60px auto; 
   background: #000000;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 56px;
-  margin-top:20px;
+  padding: 0;
 }
 
-/* Blurred Ellipse (Ellipse 23) */
+/* Blurred Ellipse */
 .ellipse {
   position: absolute;
   width: 504px;
   height: 500px;
   left: 552px;
   top: 0;
-  background: #D9D9D9;
+  background: #d9d9d9;
   opacity: 0.3;
   filter: blur(100px);
   z-index: 1;
@@ -29,27 +30,31 @@
 
 /* Left Content */
 .leftContent {
+  position: absolute;
+  left: 56px;
+  top: 69px;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 30px;
   max-width: 450px;
-  z-index: 2;
 }
 
 .category {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color: #00FF66;
+  color: #00ff66;
 }
 
 .heading {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 48px;
   line-height: 60px;
-  color: #FAFAFA;
+  color: #fafafa;
   letter-spacing: 0.04em;
+  max-width: 443px;
 }
 
 /* Timer (Frame 601) */
@@ -61,7 +66,7 @@
 .timerBox {
   width: 62px;
   height: 62px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -70,25 +75,25 @@
 }
 
 .timeValue {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color: #000;
+  color: #000000;
   margin-bottom: -4px;
 }
 
 .timeLabel {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 11px;
-  color: #000;
+  color: #000000;
 }
 
 /* CTA Button */
 .ctaBtn {
   margin-top: 20px;
-  background: #00FF66;
-  color: #FAFAFA;
-  font-family: 'Poppins', sans-serif;
+  background: #00ff66;
+  color: #fafafa;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
   padding: 16px 48px;
@@ -100,34 +105,18 @@
 
 /* Right Content */
 .imageBox {
-  position: relative;
+  position: absolute;
   width: 600px;
   height: 420px;
+  right: 0;
+  top: 40px;
   z-index: 2;
 }
 
-
-
-
 .productImage {
-  position: absolute;
-  width: 568px;
-  height: 330px;
-  left: calc(50% - 568px / 2);
-  top: calc(50% - 330px / 2);
-
-  background: url("/JBL_BOOMBOX_2_HERO_020_x1.png") no-repeat center center;
-  background-size: contain;
-
-  transform: scaleX(-1); /* mirror effect */
+  object-fit: contain;
+  transform: scaleX(-1); /* Mirror effect */
 }
-
-
-
-
-
-
-
 
 
 

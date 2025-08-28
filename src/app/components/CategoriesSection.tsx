@@ -283,21 +283,217 @@
 
 
 
-import React, { useRef } from "react";
+// import React, { useRef ,useEffect,useState} from "react";
+// import Image from "next/image";
+// import styles from "./CategoriesSection.module.css";
+// import { supabase } from "@/app/libr/supabaseClient";
+// import { getImageSrc } from "@/utils/getImageSrc";
+
+// const categories = [
+//   { icon: "/icons/phone.png", title: "Phones" },
+//   { icon: "/icons/laptop.png", title: "Laptops" },
+//   { icon: "/icons/watch.png", title: "Watches" },
+//   { icon: "/icons/camera.png", title: "Cameras" },
+//   { icon: "/icons/shoes.png", title: "Shoes" },
+//   { icon: "/icons/game.png", title: "Gaming" },
+// ];
+
+// type Category = {
+//   id: number;
+//   title: string;
+//   icon: string;
+// };
+
+
+// const CategoriesSection: React.FC = () => {
+  
+//   const [categories, setCategories] = useState<Category[]>([]);
+//   const scrollRef = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     const fetchCategories = async () => {
+//       const { data, error } = await supabase.from("categories").select("*");
+//       if (error) {
+//         console.error("Error fetching categories:", error);
+//       } else {
+//         setCategories(data);
+//       }
+//     };
+
+//     fetchCategories();
+//   }, []);
+
+//   const scroll = (direction: "left" | "right") => {
+//     if (scrollRef.current) {
+//       scrollRef.current.scrollBy({
+//         left: direction === "left" ? -300 : 300,
+//         behavior: "smooth",
+//       });
+//     }
+//   };
+
+//   return (
+//     <section className={styles.categories}>
+//       {/* Header */}
+//       <div className={styles.headerRow}>
+//         <div className={styles.left}>
+//           <div className={styles.tagRow}>
+//             <div className={styles.tagBox}></div>
+//             <span className={styles.tag}>Categories</span>
+//           </div>
+//           <h2 className={styles.heading}>Browse By Category</h2>
+//         </div>
+
+//         <div className={styles.arrows}>
+//           <button className={styles.arrowBtn} onClick={() => scroll("left")}>&lt;</button>
+//           <button className={styles.arrowBtn} onClick={() => scroll("right")}>&gt;</button>
+//         </div>
+//       </div>
+
+//       {/* Scrollable Categories */}
+//       <div className={styles.scrollWrapper} ref={scrollRef}>
+//         {categories.map((cat, index) => (
+//           <div key={index} className={styles.card}>
+//             <Image
+//               src={cat.icon}
+//               alt={cat.title}
+//               width={56}
+//               height={56}
+//               className={styles.icon}
+//               unoptimized
+//             />
+//             <p className={styles.title}>{cat.title}</p>
+//           </div>
+//         ))}
+//       </div>
+
+//       <div className={styles.line}></div>
+//     </section>
+//   );
+// };
+
+// export default CategoriesSection;
+
+
+
+// import React, { useRef, useEffect, useState } from "react";
+// import Image from "next/image";
+// import styles from "./CategoriesSection.module.css";
+// import { supabase } from "@/app/libr/supabaseClient";
+// import { getImageSrc } from "@/app/utils/getImageSrc";
+
+// type Category = {
+//   id: number;
+//   title: string;
+//   icon: string; // sirf filename aayega database se
+// };
+
+// const CategoriesSection: React.FC = () => {
+//   const [categories, setCategories] = useState<Category[]>([]);
+//   const scrollRef = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     const fetchCategories = async () => {
+//       const { data, error } = await supabase.from("categories").select("*");
+//       if (error) {
+//         console.error("Error fetching categories:", error);
+//       } else {
+//         setCategories(data);
+//       }
+//     };
+
+//     fetchCategories();
+//   }, []);
+
+//   const scroll = (direction: "left" | "right") => {
+//     if (scrollRef.current) {
+//       scrollRef.current.scrollBy({
+//         left: direction === "left" ? -300 : 300,
+//         behavior: "smooth",
+//       });
+//     }
+//   };
+
+//   return (
+//     <section className={styles.categories}>
+//       {/* Header */}
+//       <div className={styles.headerRow}>
+//         <div className={styles.left}>
+//           <div className={styles.tagRow}>
+//             <div className={styles.tagBox}></div>
+//             <span className={styles.tag}>Categories</span>
+//           </div>
+//           <h2 className={styles.heading}>Browse By Category</h2>
+//         </div>
+
+//         <div className={styles.arrows}>
+//           <button className={styles.arrowBtn} onClick={() => scroll("left")}>&lt;</button>
+//           <button className={styles.arrowBtn} onClick={() => scroll("right")}>&gt;</button>
+//         </div>
+//       </div>
+
+//       {/* Scrollable Categories */}
+//       <div className={styles.scrollWrapper} ref={scrollRef}>
+//         {categories.map((cat) => (
+//           <div key={cat.id} className={styles.card}>
+//             <Image
+//               src={getImageSrc(cat.icon)} // yahan function use ho raha hai
+//               alt={cat.title}
+//               width={56}
+//               height={56}
+//               className={styles.icon}
+//               unoptimized
+//             />
+//             <p className={styles.title}>{cat.title}</p>
+//           </div>
+//         ))}
+//       </div>
+
+//       <div className={styles.line}></div>
+//     </section>
+//   );
+// };
+
+// export default CategoriesSection;
+
+
+
+
+
+
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./CategoriesSection.module.css";
+import { supabase } from "@/app/libr/supabaseClient";
+import { getImageSrc } from "@/app/utils/getImageSrc";
 
-const categories = [
-  { icon: "/icons/phone.png", title: "Phones" },
-  { icon: "/icons/laptop.png", title: "Laptops" },
-  { icon: "/icons/watch.png", title: "Watches" },
-  { icon: "/icons/camera.png", title: "Cameras" },
-  { icon: "/icons/shoes.png", title: "Shoes" },
-  { icon: "/icons/game.png", title: "Gaming" },
-];
+type Category = {
+  id: number;
+  title: string;
+  icon: string; // sirf filename aayega database se
+};
 
 const CategoriesSection: React.FC = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const { data, error } = await supabase.from("categories").select("*");
+      if (error) {
+        console.error("Error fetching categories:", error);
+      } else {
+        // yahan hum icons ka path public/icons ke sath add kar rahe hain
+        const updatedData = data.map((cat: Category) => ({
+          ...cat,
+          icon: `icons/${cat.icon}`, // icons folder ke path ke sath filename
+        }));
+        setCategories(updatedData);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -328,10 +524,10 @@ const CategoriesSection: React.FC = () => {
 
       {/* Scrollable Categories */}
       <div className={styles.scrollWrapper} ref={scrollRef}>
-        {categories.map((cat, index) => (
-          <div key={index} className={styles.card}>
+        {categories.map((cat) => (
+          <div key={cat.id} className={styles.card}>
             <Image
-              src={cat.icon}
+              src={getImageSrc(cat.icon)} // ab icons/{filename} jayega
               alt={cat.title}
               width={56}
               height={56}
